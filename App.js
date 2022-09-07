@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, TextInput, Button } from 'react-native';
 import { styles, myStyle } from './assets/styles/myStyles';
 import Banner from './components/Banner';
 import { useState } from 'react';
-import { TouchableOpacity } from 'react-native-web';
+import { TouchableOpacity } from 'react-native';
 
 export default function App() {
   //estados
@@ -41,24 +41,7 @@ export default function App() {
       </View>
       <View style={[myStyle.viewAlign, myStyle.marginWid, { flex: 10, backgroundColor: '#808000' }]}>
 
-        {/*     <View style={{ backgroundColor: '#32cd32', flex: 1, alignItems: 'center', height: '25%' }}>
-          <Image
-            source={{ uri: 'https://picsum.photos/50/50' }}
-            style={[myStyle.image, { flex: 1 }]}
-          />
-        </View>
-        <View style={{ backgroundColor: '#ffff00', flex: 1, alignItems: 'center', height: '25%' }}>
-          <Image
-            source={{ uri: 'https://picsum.photos/200/200' }}
-            style={[myStyle.image, { flex: 1 }]}
-          />
-        </View>
-        <View style={{ backgroundColor: '#4169e1', flex: 1, alignItems: 'center', height: '25%' }}>
-          <Image
-            source={{ uri: 'https://picsum.photos/100/100' }}
-            style={[myStyle.image, { flex: 1 }]}
-          />
-        </View> */}
+
 
         <Text> Valor1</Text>
         <TextInput placeholder='Ingrese valor 1'
@@ -77,40 +60,47 @@ export default function App() {
         />
         <Text>Resultado</Text>
         <Text> {resultado}</Text>
-        <Button
+        {/* <Button
           title="sumar"
           onPress={() => calcular('+')}
-        />
-        <TouchableOpacity
-          style={{ backgroundColor: 'orange', marginTop: 10, width: 100 }}
-          onPress={() => calcular('-')}
-        >
-          <Text style={{ color: 'white', padding: 10, textAlign: 'center', fontSize: 20, }}>Restar</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={{ backgroundColor: 'green' }}
-          onPress={() => calcular('/')}
-        >
-          <Text style={{ color: 'white' }}>Dividir</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={{ backgroundColor: 'brown' }}
-          onPress={() => calcular('/')}
-        >
-          <Text style={{ color: 'white' }}>Multiplicar</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={{ backgroundColor: 'blue', marginTop: 10, width: 100 }}
-          onPress={() => {
-            setValor1('');
-            setValor2('');
-            setResultado('');
-          }}
-        >
-          <Text style={{ color: 'white', padding: 10, textAlign: 'center', fontSize: 20 }}>Clear</Text>
-        </TouchableOpacity>
+        /> */}
+        <View style={{ flex: 1, flexDirection: 'row' }}>
+          <TouchableOpacity
+            style={{ backgroundColor: '#00ffff', marginTop: 5, marginRight: 3, width: 60, height: 50, borderRadius: 5 }}
+            onPress={() => calcular('+')}
+          >
+            <Text style={{ color: '#000000', fontWeight: 'bold', padding: 10, textAlign: 'center', fontSize: 15 }}>Suma</Text>
+          </TouchableOpacity>
 
-
+          <TouchableOpacity
+            style={{ backgroundColor: '#ffff00', marginTop: 5, marginRight: 3, marginLeft: 3, width: 60, height: 50, borderRadius: 5 }}
+            onPress={() => calcular('-')}
+          >
+            <Text style={{ color: '#000000', fontWeight: 'bold', padding: 10, textAlign: 'center', fontSize: 15 }}>Resta</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{ backgroundColor: '#9acd32', marginTop: 5, marginRight: 3, marginLeft: 3, width: 60, height: 50, borderRadius: 5 }}
+            onPress={() => calcular('/')}
+          >
+            <Text style={{ color: '#000000', fontWeight: 'bold', padding: 10, textAlign: 'center', fontSize: 15 }}>Div</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{ backgroundColor: '#ff1493', marginTop: 5, marginRight: 3, marginLeft: 3, width: 60, height: 50, borderRadius: 5 }}
+            onPress={() => calcular('*')}
+          >
+            <Text style={{ color: '#000000', fontWeight: 'bold', padding: 10, textAlign: 'center', fontSize: 15 }}>Mult</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{ backgroundColor: '#ff6347', marginTop: 5, marginLeft: 3, width: 60, height: 50, borderRadius: 5 }}
+            onPress={() => {
+              setValor1('');
+              setValor2('');
+              setResultado('');
+            }}
+          >
+            <Text style={{ color: '#000000', fontWeight: 'bold', padding: 10, textAlign: 'center', fontSize: 20 }}>C</Text>
+          </TouchableOpacity>
+        </View>
       </View>
       <View style={[myStyle.viewAlign, myStyle.marginWid, { flex: 1, backgroundColor: '#ff4500', marginBottom: 5 }]}>
         <Text style={styles.texts}>Footer</Text>
